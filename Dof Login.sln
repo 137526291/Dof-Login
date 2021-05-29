@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dof Login", "Dof Login\Dof Login.csproj", "{822F635B-6B7B-42DF-A9E5-64E42FBB89EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{822F635B-6B7B-42DF-A9E5-64E42FBB89EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{822F635B-6B7B-42DF-A9E5-64E42FBB89EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{822F635B-6B7B-42DF-A9E5-64E42FBB89EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{822F635B-6B7B-42DF-A9E5-64E42FBB89EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EDC2C639-F89F-4BD8-A9CC-C00823026885}
+	EndGlobalSection
+EndGlobal

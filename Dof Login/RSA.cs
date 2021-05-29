@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Dof_Login
+{
+    public static class RSA
+    {
+        public static string private_key = @"-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEAwNPWHvdCEZbpRpFyACIB0UWcD2ye/87oKEq3f4HAvKXyifnB
+Am/coMr97sftq6nDOy+ihm2gb9aBx6VBX4F8wFgMeKKsWLI/6xMGODI/HZeI3i+p
+c5Z+q0DYEKzTXPFuIrhGdxno2KMjT1LTfbGkbybzZH9MD+c15NQ9s2nGQ19fgkFE
+/tMNWKU3JKxFP+uCYIwZX6t8MMBIkNSlBl2gC4aQ8XomWuCiv+sm/md3/FPtfUmx
+WFrieucYUy7g/VB8L2E3pMeN012pD/FtO1fhiKsc2DJQQy0F3BjeXBBa5ed9HKJi
+SjItknFLU82LHd3EfMiTdtato/BRbxmmXQWNuwIDAQABAoIBAQCf8dcFPoFuB6id
+4V0XYR3y0XOek7HbbGvDqB5HRIBzuo7RBfqkI9d1BIvXebzaDGmleWCtcteGjP5/
+dMMiDk1FWoOVuRGOTOSZ/+DD0mHqENz1t8Et4KJXOOVAB6sWyChb4lCI0FQFBmTu
+kjxdYXGMxVlUfgbAlj9s/OPlIxLSpCKGdJzGKlxkILntx6aNb849T4Irl8eJkNjT
+doZlXVMXkRXvo2f5Uj7ajpsvmQvLoyi8rgJimcbhqJBKrggvUrIAx3UQKkodsK46
+Z44Pz+2hLCtQjMjDzD501N96LSFXBBv8u3yPAhAPz77gkrG6/iHkXEqoKGv5GlkV
+zHhBgb0pAoGBAPMdN3ByJDM8ppgE4Hwa46xldnMMdMU2vuDda4fU6WdLRPnwUboQ
+FFZ4xZVC+CrUn0BMyyx20fhigRs0LGX4Xm5ftlCFn/D0NoytUrzp7obNTo1eVcK8
+M+MMEH0nXe1/exqYbmi7tlsYqQ4Arm9QwLDwIxPUNcuh/o0qtJjDQHd3AoGBAMsM
+SX0rmKeWDHKcIvZCSZyR1qpzK8ZHsTuaE+3N7z6EAU+SMl234xD/qt7pRz9OgWyE
+l+We09FQKdBn09Jkqp4fyx/SrLpifEwK4y2RhMsOf/BWXg0fMfm89Wxp5QVsdpb7
+prDlJS5PwfasxhCDvUC/HV9nKg2yl4WzAzo5x/TdAoGBAMBXWydBhtZqo7seEKTf
+eUVJuN7o+fGVkIrDY3HBxy+L43SC54X3dr+7KUcgBsuMELqEhzIUh6al+FMXghDi
+4YMdglZOge3WqNm/vvfrdGV+RSmfeuZok/yL7Pe3j554/2JZOvDtoiaMaiPD8j3r
+e6gBNR9ZA36qGYSCRwOdZoGdAoGBAKXal3yiy8K4EdrcJsK4SqCVj58TDEKd9OsW
+ZAjvGekasmdop7NdrSAJdm02Z3gSjC0z8U8ieSqULFOLO76zc5pNpgGMeIKWR6ll
+i0OBhdLHOUH7ij91p8Cy1FWF+giAHC4fyHzd74zwoSL45aA/u6rTcQ6omfUuWA5h
+ttUstWQRAoGAPCrFwqaTWogZ9IADW3BvGh+5YNVunK/RNQ0l4/FFARyRPXAgM+wU
+0SF6eF5tKS99r2u6uCa5vPef6zgs6I0v8CeWaqXfXIzuJW1ZxqrhyE6kN9azldnQ
+LsnxT7V167cxqPRlkj8qQimWAvxrmMeEjX0CtATqIroedYnOmqlUfPM=
+-----END RSA PRIVATE KEY-----
+";
+    }
+}
