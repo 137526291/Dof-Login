@@ -5,19 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Dof_Login"
         mc:Ignorable="d"
-        Title="配置" Height="200" Width="240"
+        Title="配置" Height="240" Width="240"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label Content="数据库地址：" HorizontalAlignment="Left" Margin="12,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="数据库地址：" HorizontalAlignment="Left" Margin="12,12,0,0" VerticalAlignment="Top"/>
         <Label Content="数据库账号：" HorizontalAlignment="Left" Margin="12,41,0,0" VerticalAlignment="Top"/>
         <Label Content="数据库密码:" HorizontalAlignment="Left" Margin="12,72,0,0" VerticalAlignment="Top"/>
-        <Label Content="游戏地址:" HorizontalAlignment="Left" Margin="12,103,0,0" VerticalAlignment="Top"/>
-        
-        <TextBox Name="DBHost"  HorizontalAlignment="Left" Height="23" Margin="94,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="DBUser" HorizontalAlignment="Left" Height="23" Margin="94,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="DBPass" HorizontalAlignment="Left" Height="23" Margin="94,72,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="GameHost" HorizontalAlignment="Left" Height="23" Margin="94,103,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button Name="ModifyBtn" Content="修改" HorizontalAlignment="Left" Margin="139,134,0,0" VerticalAlignment="Top" Width="75" Click="ModifyBtn_Click"/>
-        <Button Name="CancelBtn" Content="取消" HorizontalAlignment="Left" Margin="16,134,0,0" VerticalAlignment="Top" Width="75" Click="CancelBtn_Click"/>
+        <Label Content="数据库端口:" HorizontalAlignment="Left" Margin="12,103,0,0" VerticalAlignment="Top"/>
+        <Label Content="游戏地址:" HorizontalAlignment="Left" Margin="12,134,0,0" VerticalAlignment="Top"/>
+
+
+        <TextBox Name="DBHost" HorizontalAlignment="Left" Margin="94,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="DBUser" HorizontalAlignment="Left" Margin="94,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="DBPass" HorizontalAlignment="Left" Margin="94,72,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="DBPort" HorizontalAlignment="Left" Margin="94,103,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="GameHost" HorizontalAlignment="Left" Margin="94,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Name="ModifyBtn" Content="修改" Margin="0,165,19.6,0" Click="ModifyBtn_Click" HorizontalAlignment="Right" Width="75" VerticalAlignment="Top"/>
+        <Button Name="CancelBtn" Content="取消" HorizontalAlignment="Left" Margin="16,165,0,0" Width="75" Click="CancelBtn_Click" VerticalAlignment="Top"/>
     </Grid>
 </Window>

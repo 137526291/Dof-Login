@@ -19,6 +19,9 @@ namespace Dof_Login
     /// </summary>
     public partial class RegisterWindow : Window
     {
+        public delegate void GetTextHandler(string username, string password, TextBox value1, PasswordBox value2);  //声明委托
+        public GetTextHandler getTextHandler;
+
         public RegisterWindow()
         {
             InitializeComponent();
@@ -35,6 +38,8 @@ namespace Dof_Login
             {
                 case "Registered Success":
                     MessageBox.Show(UserName.Text.Trim() +" 注册成功！");
+                    getTextHandler(UserName.Text.Trim(), Password.Password.Trim(), UserName, Password);
+                    Close();
                     break;
                 case "Registered Fail":
                     MessageBox.Show("注册失败！");

@@ -1,10 +1,8 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -24,6 +22,13 @@ namespace Dof_Login
     /// </summary>
     public partial class MainWindow : Window
     {
+        
+        public void GetValue(string username, string password, TextBox value1, PasswordBox value2)
+        {
+            UserName.Text = username;
+            Password.Password = password;
+        }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -33,12 +38,19 @@ namespace Dof_Login
         void Init()
         {
             Login.mySql = Login.GetMySqlCon();
-            Login.mySql.Open();
-            if (Login.mySql.State != System.Data.ConnectionState.Open)
+            try
+            {
+                Login.mySql.Open();
+                if (Login.mySql.State != System.Data.ConnectionState.Open)
+                {
+                    MessageBox.Show("数据库连接失败，请检查数据库地址！");
+                }
+            }
+            catch (Exception)
             {
                 MessageBox.Show("数据库连接失败，请检查数据库地址！");
             }
-            
+
             if (!File.Exists(Utility.GetConfigPath()))
             {
                 Stream s = new FileStream(Utility.GetConfigPath(), FileMode.Create);
@@ -48,9 +60,16 @@ namespace Dof_Login
                 streamWriter.Close();
                 s.Close();
 
+                s = new FileStream(System.IO.Path.Combine(Environment.CurrentDirectory, "publickey.pem"), FileMode.Create);
+                streamWriter = new StreamWriter(s, utf8);
+                streamWriter.Write(RSA.public_key);
+                streamWriter.Close();
+                s.Close();
+
                 Utility.WriteINI("数据库信息", "DBHost", Config.dbhost);
                 Utility.WriteINI("数据库信息", "DBUser", Config.dbuser);
-                Utility.WriteINI("数据库信息", "DBPassword", Config.dbpass);
+                Utility.WriteINI("数据库信息", "DBPassword", Utility.Encrypt(Config.dbpass));
+                Utility.WriteINI("数据库信息", "DBPort", Config.dbport);
 
                 Utility.WriteINI("登录器信息", "GameHost", Config.gamehost);
 
@@ -61,7 +80,8 @@ namespace Dof_Login
             {
                 Config.dbhost = Utility.ReadINI("数据库信息", "DBHost");
                 Config.dbuser = Utility.ReadINI("数据库信息", "DBUser");
-                Config.dbpass = Utility.ReadINI("数据库信息", "DBPassword");
+                Config.dbpass = Utility.Decrypt(Utility.ReadINI("数据库信息", "DBPassword"));
+                Config.dbport = Utility.ReadINI("数据库信息", "DBPort");
 
                 Config.gamehost = Utility.ReadINI("登录器信息", "GameHost");
 
@@ -107,7 +127,12 @@ namespace Dof_Login
                 return;
             }
 
-            StartProcess(System.IO.Path.Combine(Environment.CurrentDirectory, "dnf.exe"), new string[] { arg });
+            // StartProcess(System.IO.Path.Combine(Environment.CurrentDirectory, "dnf.exe"), new string[] { arg });
+            if (StartProcess(System.IO.Path.Combine(Environment.CurrentDirectory, "dnf.exe"), new string[] { arg }))
+            {
+                Application.Current.Shutdown();
+            }
+
         }
 
         /// <summary>
@@ -118,6 +143,7 @@ namespace Dof_Login
         private void RegisterBtn_Click(object sender, RoutedEventArgs e)
         {
             RegisterWindow registerWindow = new RegisterWindow();
+            registerWindow.getTextHandler = GetValue;
             registerWindow.ShowDialog();
         }
 
@@ -129,6 +155,7 @@ namespace Dof_Login
         private void ModifyBtn_Click(object sender, RoutedEventArgs e)
         {
             ModifyWindows modifyWindows = new ModifyWindows();
+            modifyWindows.getTextHandler = GetValue;
             modifyWindows.ShowDialog();
         }
 
@@ -140,6 +167,7 @@ namespace Dof_Login
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
             BackWindow backWindow = new BackWindow();
+            backWindow.getTextHandler = GetValue;
             backWindow.ShowDialog();
         }
 
@@ -177,7 +205,6 @@ namespace Dof_Login
                 //通过以下参数可以控制exe的启动方式，具体参照 myprocess.StartInfo.下面的参数，如以无界面方式启动exe等
                 myprocess.StartInfo.UseShellExecute = false;
                 myprocess.Start();
-                Application.Current.Shutdown();
                 return true;
             }
             catch (Exception ex)

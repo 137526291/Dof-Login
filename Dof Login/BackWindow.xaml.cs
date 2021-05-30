@@ -19,6 +19,9 @@ namespace Dof_Login
     /// </summary>
     public partial class BackWindow : Window
     {
+        public delegate void GetTextHandler(string username, string password, TextBox value1, PasswordBox value2);  //声明委托
+        public GetTextHandler getTextHandler;
+
         public BackWindow()
         {
             InitializeComponent();
@@ -35,6 +38,8 @@ namespace Dof_Login
             {
                 case "Back Success":
                     MessageBox.Show(UserName.Text.Trim() + " 找回密码成功！");
+                    getTextHandler(UserName.Text.Trim(), Password.Password.Trim(), UserName, Password);
+                    Close();
                     break;
                 case "Username or QQ Error":
                     MessageBox.Show("账号或QQ错误！");

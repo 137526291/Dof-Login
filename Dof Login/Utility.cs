@@ -12,7 +12,7 @@ namespace Dof_Login
     {
         // doflogin
         static readonly string p_key = "ac2877dc6e63e96b";
-        static readonly string configPath = System.IO.Path.Combine(Environment.CurrentDirectory, "config.ini");
+        static readonly string configPath = System.IO.Path.Combine(Environment.CurrentDirectory, "DLConfig.ini");
 
         /// <summary>
         /// 加密

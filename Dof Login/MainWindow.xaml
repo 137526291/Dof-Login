@@ -1,30 +1,34 @@
-﻿<Window x:Class="Dof_Login.MainWindow"
+﻿<Window  x:Class="Dof_Login.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Dof_Login"
         mc:Ignorable="d"
-        Title="Dof登录器" Height="220" Width="256"
+        Title="Dof登录器" Height="260" Width="280"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
         WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
         Closing="Window_Closing">
     <Grid>
 
-        <TextBox Name="UserName" HorizontalAlignment="Left" Height="23" Margin="78,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
-        <PasswordBox Name="Password" HorizontalAlignment="Left" Height="23" Margin="78,95,0,0" VerticalAlignment="Top" Width="128"/>
-        <Label Content="账号：" HorizontalAlignment="Left" Margin="32,64,0,0" VerticalAlignment="Top"/>
-        <Label Content="密码：" HorizontalAlignment="Left" Margin="32,95,0,0" VerticalAlignment="Top"/>
-        <Button Name="RegisterBtn" Content="注册" HorizontalAlignment="Left" Margin="32,126,0,0" VerticalAlignment="Top" Width="75" Click="RegisterBtn_Click"/>
-        <Button Name="LoginBtn" Content="登录" HorizontalAlignment="Left" Margin="131,126,0,0" VerticalAlignment="Top" Width="75" Click="LoginBtn_Click"/>
-        <Button Name="ModifyBtn" Content="修改密码" HorizontalAlignment="Right" Margin="0,10,9.6,0" VerticalAlignment="Top" Width="75" Click="ModifyBtn_Click"/>
-        <Button Name="BackBtn" Content="找回密码" HorizontalAlignment="Right" Margin="0,33,9.6,0" VerticalAlignment="Top" Width="75" Click="BackBtn_Click"/>
+        <TextBox Name="UserName" HorizontalAlignment="Left" Margin="81,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="148"/>
+        <PasswordBox Name="Password" HorizontalAlignment="Left" Margin="81,112,0,0" VerticalAlignment="Top" Width="148"/>
+        <Label Content="账号：" HorizontalAlignment="Left" Margin="32,85,0,0" VerticalAlignment="Top"/>
+        <Label Content="密码：" HorizontalAlignment="Left" Margin="32,113,0,0" VerticalAlignment="Top"/>
+        <Button Name="RegisterBtn" Content="注册" HorizontalAlignment="Left" Margin="32,148,0,0" VerticalAlignment="Top" Width="75" Click="RegisterBtn_Click"/>
+        <Button Name="LoginBtn" Content="登录" Margin="0,148,44.6,0" VerticalAlignment="Top" Click="LoginBtn_Click" HorizontalAlignment="Right" Width="75"/>
+        <Button Name="ModifyBtn" Content="修改密码" HorizontalAlignment="Right" Margin="0,10,9.6,0" VerticalAlignment="Top" Width="95" Click="ModifyBtn_Click"/>
+        <Button Name="BackBtn" Content="找回密码" HorizontalAlignment="Right" Margin="0,47,9.6,0" VerticalAlignment="Top" Width="95" Click="BackBtn_Click"/>
         <Button x:Name="ConfigBtn" Content="配置" Margin="10,10,0,0" VerticalAlignment="Top" Click="ConfigBtn_Click" HorizontalAlignment="Left" Width="75"/>
 
-        <TextBlock Margin="52,0,4.6,14.4" VerticalAlignment="Bottom">
+        <TextBlock Margin="56,0,9.6,14.4" VerticalAlignment="Bottom">
             <Hyperlink NavigateUri="https://github.com/wenyumook/Dof-Login" Name="LinkHelp" FontSize="9" Click="LinkHelp_Click">
                 https://github.com/wenyumook/Dof-Login
             </Hyperlink>
         </TextBlock>
-        <Label Content="项目地址:" HorizontalAlignment="Left" Margin="4,0,0,10.4" FontSize="9" VerticalAlignment="Bottom"/>
+        <Label Content="项目地址:" HorizontalAlignment="Left" Margin="10,0,0,10.4" FontSize="9" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>

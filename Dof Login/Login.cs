@@ -220,7 +220,7 @@ namespace Dof_Login
         /// <returns></returns>
         public static MySqlConnection GetMySqlCon()
         {
-            string mysqlStr = string.Format("Database=test;Data Source={0};User Id={1};Password={2};pooling=false;CharSet=utf8;port=3306", Config.dbhost, Config.dbuser, Config.dbpass);
+            string mysqlStr = string.Format("Database=test;Data Source={0};User Id={1};Password={2};port={3};pooling=false;CharSet=utf8", Config.dbhost, Config.dbuser, Config.dbpass, Config.dbport);
             MySqlConnection mysql = new MySqlConnection(mysqlStr);
             return mysql;
         }

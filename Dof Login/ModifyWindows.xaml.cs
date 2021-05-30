@@ -19,6 +19,9 @@ namespace Dof_Login
     /// </summary>
     public partial class ModifyWindows : Window
     {
+        public delegate void GetTextHandler(string username, string password, TextBox value1, PasswordBox value2);  //声明委托
+        public GetTextHandler getTextHandler;
+
         public ModifyWindows()
         {
             InitializeComponent();
@@ -35,6 +38,8 @@ namespace Dof_Login
             {
                 case "Modify Success":
                     MessageBox.Show(UserName.Text.Trim() + " 修改密码成功！");
+                    getTextHandler(UserName.Text.Trim(), NewPassword.Password.Trim(), UserName, NewPassword);
+                    Close();
                     break;
                 case "Username or Password Error":
                     MessageBox.Show("账号或密码错误！");
