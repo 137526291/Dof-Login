@@ -34,6 +34,12 @@ namespace Dof_Login
                 MessageBox.Show("账号或密码为空！");
                 return;
             }
+            if (Password.Password.Trim().Length < 6)
+            {
+                MessageBox.Show("密码不能小于6位！");
+                return;
+            }
+
             switch (Login.ModifyPassword(UserName.Text.Trim(), Password.Password.Trim(), NewPassword.Password.Trim()))
             {
                 case "Modify Success":

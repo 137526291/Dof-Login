@@ -37,20 +37,6 @@ namespace Dof_Login
 
         void Init()
         {
-            Login.mySql = Login.GetMySqlCon();
-            try
-            {
-                Login.mySql.Open();
-                if (Login.mySql.State != System.Data.ConnectionState.Open)
-                {
-                    MessageBox.Show("数据库连接失败，请检查数据库地址！");
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("数据库连接失败，请检查数据库地址！");
-            }
-
             if (!File.Exists(Utility.GetConfigPath()))
             {
                 Stream s = new FileStream(Utility.GetConfigPath(), FileMode.Create);
@@ -87,6 +73,20 @@ namespace Dof_Login
 
                 UserName.Text = Utility.ReadINI("账号信息", "UserName");
                 Password.Password = Utility.Decrypt(Utility.ReadINI("账号信息", "Password"));
+            }
+
+            Login.mySql = Login.GetMySqlCon();
+            try
+            {
+                Login.mySql.Open();
+                if (Login.mySql.State != System.Data.ConnectionState.Open)
+                {
+                    MessageBox.Show("数据库连接失败，请检查数据库地址！");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("数据库连接失败，请检查数据库地址！");
             }
 
         }

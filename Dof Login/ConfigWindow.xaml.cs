@@ -67,6 +67,8 @@ namespace Dof_Login
                 Utility.WriteINI("登录器信息", "GameHost", Config.gamehost);
             }
 
+            MessageBox.Show("配置修改成功！");
+
             Login.mySql.Close();
             Login.mySql = Login.GetMySqlCon();
             try
@@ -76,14 +78,16 @@ namespace Dof_Login
                 {
                     MessageBox.Show("数据库连接失败，请检查数据库地址！");
                 }
+                else
+                {
+                    Close();
+                }
             }
             catch (Exception)
             {
                 MessageBox.Show("数据库连接失败，请检查数据库地址！");
             }
             
-            MessageBox.Show("配置修改成功！");
-            Close();
         }
 
         private void CancelBtn_Click(object sender, RoutedEventArgs e)

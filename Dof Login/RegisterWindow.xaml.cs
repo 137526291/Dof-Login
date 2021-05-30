@@ -34,6 +34,17 @@ namespace Dof_Login
                 MessageBox.Show("账号或密码为空！");
                 return;
             }
+            if (UserName.Text.Trim().Length < 4)
+            {
+                MessageBox.Show("账号不能小于4位！");
+                return;
+            }
+            if (Password.Password.Trim().Length < 6)
+            {
+                MessageBox.Show("密码不能小于6位！");
+                return;
+            }
+
             switch (Login.RegisterUser(UserName.Text.Trim(), Password.Password.Trim(), QQ.Text.Trim()))
             {
                 case "Registered Success":
