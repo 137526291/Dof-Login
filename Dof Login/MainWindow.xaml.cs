@@ -121,11 +121,11 @@ namespace Dof_Login
             Utility.WriteINI("账号信息", "UserName", UserName.Text.Trim());
             Utility.WriteINI("账号信息", "Password", Utility.Encrypt(Password.Password.Trim()));
 
-            if (!ModifyHostsFile(string.Format("\n{0}   start.dnf.tw\n", Config.gamehost)))
-            {
-                MessageBox.Show("Hosts修改失败，请以管理员方式运行！");
-                return;
-            }
+            //if (!ModifyHostsFile(string.Format("\n{0}   start.dnf.tw\n", Config.gamehost)))
+            //{
+            //    MessageBox.Show("Hosts修改失败，请以管理员方式运行！");
+            //    return;
+            //}
 
             // StartProcess(System.IO.Path.Combine(Environment.CurrentDirectory, "dnf.exe"), new string[] { arg });
             if (StartProcess(System.IO.Path.Combine(Environment.CurrentDirectory, "dnf.exe"), new string[] { arg }))
